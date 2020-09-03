@@ -30,7 +30,7 @@ public class SubscriptionServiceTest {
 		expected = new BigDecimal(25500);
 		try {
 			costo = service.calculateCost(19,SubscriptionCategory.DIAMOND);
-			Assert.assertEquals(expected, costo);
+			Assert.assertEquals(expected, costo.setScale(0,BigDecimal.ROUND_HALF_UP));
 		} catch (SubscritionException e) {
 			e.printStackTrace();
 		}
@@ -55,7 +55,7 @@ public class SubscriptionServiceTest {
 		expected = new BigDecimal(13500);
 		try {
 			costo = service.calculateCost(33,SubscriptionCategory.SILVER);
-			Assert.assertEquals(expected, costo);
+			Assert.assertEquals(expected, costo.setScale(0,BigDecimal.ROUND_HALF_UP));
 		} catch (SubscritionException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -71,12 +71,28 @@ public class SubscriptionServiceTest {
 		expected = new BigDecimal(12000);
 		try {
 			costo = service.calculateCost(77,SubscriptionCategory.SILVER);
-			Assert.assertEquals(expected, costo);
+			Assert.assertEquals(expected, costo.setScale(0,BigDecimal.ROUND_HALF_UP));
 		} catch (SubscritionException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 	}
+	
+	@Test
+	public void menora18() {
+		BigDecimal costo,expected;
+		expected = new BigDecimal(15000);
+		try {
+			costo = service.calculateCost(17,SubscriptionCategory.SILVER);
+			Assert.assertEquals(expected, costo.setScale(0,BigDecimal.ROUND_HALF_UP));
+		} catch (SubscritionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+
 	
 }
