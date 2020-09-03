@@ -1,0 +1,39 @@
+/*
+*Primera clase de equivalencia 
+*Persona < 18 años (no recibe descuento alguno en el valor total) 
+*/
+
+Input : calculateCost(Diamante, 19)
+Output : 25500
+
+/**
+*Segunda clase de equivalencia 
+* Persona <0 (no es valida la edad)
+*/
+
+Input : calculateCost(Oro,-12)
+Output : INVALID
+
+/**
+*Tercera clase de equivalencia
+*persona >25 && persona<=30 (descuento de 12%)
+*/
+
+Input : calculateCost(Plata,27) 
+Output : 13200
+
+/**
+*Cuarta clase de equivalencia
+*Persona >=31 && persona<=60 (descuento 10%)
+*/
+
+Input : calculateCost(plata,33)
+Output : 135000
+
+/**
+*Quinta clase de equivalencia 
+*Persona >60 (descuento 20%)
+*/
+
+Input: calculateCost(plata,77)
+Output:	12000
