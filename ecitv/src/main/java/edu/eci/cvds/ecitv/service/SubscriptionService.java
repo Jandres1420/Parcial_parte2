@@ -3,6 +3,7 @@ package edu.eci.cvds.ecitv.service;
 import java.math.BigDecimal;
 
 import edu.eci.cvds.ecitv.model.SubscriptionCategory;
+import edu.eci.cvds.ecitv.model.SubscritionException;
 
 /**
  * Subscription Service class in charge of calculating the monthly subscription.
@@ -16,8 +17,11 @@ public class SubscriptionService {
 	 * @param subCategory    The subscription category
 	 * @return The amount to be charged to the client
 	 */
-	public BigDecimal calculateCost(final Integer age, final SubscriptionCategory subCategory) {
-
+	public BigDecimal calculateCost(final Integer age, final SubscriptionCategory subCategory) throws SubscritionException {
+		if (age<0) {
+			throw new SubscritionException(SubscritionException.INVALID);
+		}
+		
 		return BigDecimal.TEN;
 	}
 

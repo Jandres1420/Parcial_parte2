@@ -1,6 +1,6 @@
 /*
 *Primera clase de equivalencia 
-*Persona < 18 años (no recibe descuento alguno en el valor total) 
+*Persona > 18 años && Persona<=25 (no recibe descuento alguno en el valor total) 
 */
 
 Input : calculateCost(Diamante, 19)
